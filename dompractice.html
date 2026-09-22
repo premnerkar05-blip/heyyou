@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <title>DOM Manupulation Practice</title>
+
+	<style>
+    	.highlight {
+            background-color: yellow;
+    	}
+	</style>
+
+
+</head>
+<body>
+	1. <p id="text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur, harum?</p>
+	<button onclick="changeText()">Change Text</button>
+ 
+	<script>
+    	function changeText() {
+            document.getElementById('text').textContent = 'Hello this is new text'
+    	}
+	</script> 
+    
+ 2. <button onclick="changeColor()">Change Background Color</button>
+ 
+	<script>
+    	function changeColor() {
+            document.body.style.backgroundColor = 'yellow'
+    	}
+	</script> 
+
+  3. <p id="paragraph">This is a paragraph.</p>
+	<button onclick="toggleVisibility()">Show/Hide</button>
+ 
+	<script>
+    	function toggleVisibility() {
+        	var paragraph = document.getElementById('paragraph');
+        	if (paragraph.style.display === 'none') {
+                paragraph.style.display = 'block'
+        	} else {
+                paragraph.style.display = 'none'
+        	}
+    	}
+	</script> -->
+
+
+   4. <div id="container"></div>
+	<button onclick="addElement()">Add Element</button>
+ 
+	<script>
+    	function addElement() {
+        	var newElement = document.createElement('p');
+            newElement.textContent = 'This is a new paragraph.';
+            document.getElementById('container').appendChild(newElement);
+    	}
+	</script> -->
+
+	 5. <p id="paragraph">This is a paragraph.</p>
+	<button onclick="removeElement()">Remove Element</button>
+ 
+	<script>
+    	function removeElement() {
+        	var paragraph = document.getElementById('paragraph');
+            paragraph.parentNode.removeChild(paragraph);
+    	}
+	</script> -->
+
+	 6. <img id="image" src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FyfGVufDB8fDB8fHww" alt="Image" width="200">
+	<button onclick="changeImage()">Change Image</button>
+ 
+	<script>
+    	function changeImage() {
+            document.getElementById('image').src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS555zt-I5sMwzxsqIWyRPQ7cf6JIKe3e8pCUCYquQUh8FEH0eu8irzmLs&s=10'
+    	}
+	</script> -->
+
+	 7. <p id="text">This is a paragraph.</p>
+	<button onclick="changeFontSize()">Change Font Size</button>
+ 
+	<script>
+    	function changeFontSize() {
+            document.getElementById('text').style.fontSize = '24px'
+    	}
+	</script> -->
+8. <p id="text">This is a paragraph.</p>
+	<button onclick="changeTextColor()">Change Text Color</button>
+ 
+	<script>
+    	function changeTextColor() {
+            document.getElementById('text').style.color = 'blue'
+    	}
+	</script> -->
+
+   <button onclick="countClicks()">Click Me</button>
+	<p id="clickCount">0</p>
+ 
+	<script>
+    	let count = 0;
+    	function countClicks() {
+        	count++;
+        	document.getElementById('clickCount').textContent = count;
+    	}
+	</script> -->
+
+	 <button id="myButton" onclick="changeButtonText()">Click Me</button>
+ 
+	<script>
+    	function changeButtonText() {
+            document.getElementById('myButton').textContent = 'Clicked';
+    	}
+	</script> -->
+
+	 <p id="paragraph">Toggle class on this paragraph.</p>
+	<button onclick="toggleClass()">Toggle Class</button>
+ 
+	<script>
+    	function toggleClass() {
+            document.getElementById('paragraph').classList.toggle('highlight');
+		}
+
+	</script> -->
+
+
+
+  <ul id="myList"></ul>
+	<button onclick="addItem()">Add Item</button>
+ 
+	<script>
+    	function addItem() {
+        	var listItem = document.createElement('li')
+            listItem.textContent = 'New Item'
+            document.getElementById('myList').appendChild(listItem)
+    	}
+	</script> 
+
+
+    	<li>Item 1</li>
+    	<li>Item 2</li>
+    	<li>Item 3</li>
+	</ul>
+	<button onclick="removeItem()">Remove Last Item</button>
+ 
+	<script>
+    	function removeItem() {
+        	var list = document.getElementById('myList')
+            list.removeChild(list.lastElementChild)
+    	}
+	</script>
+
+  <form id="myForm" onsubmit="return validateForm()">
+    	<input type="text" id="name" placeholder="Enter your name">
+    	<input type="submit" value="Submit">
+	</form>
+	<p id="error" style="color: red;"></p>
+ 
+	<script>
+    	function validateForm() {
+        	var name = document.getElementById('name').value
+        	if (name === '') {
+                document.getElementById('error').textContent = 'Name is required'
+            	return false
+        	}
+        	return true
+    	}
+	</script>
+
+	<button onclick="showAlert()">Show Alert</button>
+ 
+	<script>
+    	function showAlert() {
+            alert('Button Clicked!');
+    	}
+	</script>
+
+	<p id="dateTime"></p>
+	<button onclick="showDateTime()">Show Date and Time</button>
+ 
+	<script>
+    	function showDateTime() {
+        	var now = new Date()
+            document.getElementById('dateTime').textContent = now.toString()
+    	}
+	</script>
+
+	<button id="myButton" onclick="changeButtonStyle()">Click Me</button>
+ 
+	<script>
+    	function changeButtonStyle() {
+        	var button = document.getElementById('myButton')
+            button.style.backgroundColor = 'green'
+            button.style.color = 'white'
+    	}
+	</script>
+
+	<button id="myButton">Click Me</button>
+ 
+	<script>
+        document.getElementById('myButton').addEventListener('click', function() {
+            alert('Button Clicked!')
+    	})
+ </script> 
+
+
+
+
+
+ 
+
+
+
+
+
+
+</body>
+</html>
